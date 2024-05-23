@@ -24,10 +24,6 @@ def test_get_list_users():
 
     assert len(body['data']) <= per_page
 
-    print(len(body['data']))
-    print(response.status_code)
-    print(response.json())
-
 
 def test_get_current_user():
 
@@ -41,9 +37,6 @@ def test_get_current_user():
     assert body['data']['id'] == 1
     assert body['data']['first_name'] == 'George'
 
-    print(response.status_code)
-    print(response.json())
-
 
 def test_get_current_user_not_found():
 
@@ -51,9 +44,6 @@ def test_get_current_user_not_found():
 
     assert response.status_code == 404
     assert response.json() == {}
-
-    print(response.status_code)
-    print(response.json())
 
 
 def test_post_create_user():
@@ -73,9 +63,6 @@ def test_post_create_user():
     assert body['name'] == payload['name']
     assert body['job'] == payload['job']
 
-    print(response.status_code)
-    print(response.json())
-
 
 def test_put_update_user():
 
@@ -94,14 +81,9 @@ def test_put_update_user():
     assert body['name'] == payload['name']
     assert body['job'] == payload['job']
 
-    print(response.status_code)
-    print(response.json())
-
 
 def test_delete_user():
 
     response = requests.delete(BASE_URL + '/api/users/1')
 
     assert response.status_code == 204
-
-    print(response.status_code)
