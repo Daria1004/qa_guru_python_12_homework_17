@@ -1,8 +1,7 @@
 import requests
 from jsonschema import validate
 from schemas.register import schema_post_register_successful, schema_post_register_unsuccessful
-
-BASE_URL = 'https://reqres.in'
+from tests.api.conftest import BASE_URL
 
 
 def test_post_register_successful():

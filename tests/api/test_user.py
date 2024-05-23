@@ -1,9 +1,7 @@
 import requests
 from jsonschema import validate
 from schemas.user import schema_get_list_users, schema_get_single_user, schema_post_create_user, schema_put_update_user
-
-
-BASE_URL = 'https://reqres.in'
+from tests.api.conftest import BASE_URL
 
 
 def test_get_list_users():
